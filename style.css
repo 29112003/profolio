@@ -1,0 +1,40 @@
+*{
+margin: 0%;
+padding: 0%;
+box-sizing: border-box;
+font-family: gilroy;
+}
+html,body{
+height: 100%;
+width: 100%;
+}
+
+
+.main{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.fullscreen{
+    height: 100%;
+    width: 100%;
+    background-color: #383838;
+    display: flex;align-items: center;justify-content: center;
+}
+
+.middle-mover{
+    height: 0%;
+    width: 100%;
+    position: absolute;
+    background-color: #14CF93;
+    bottom: 0;
+}
+.page1{
+    height: 0%;
+    width: 100%;
+    position: absolute;
+    background-color: #FCFAF8;
+    bottom: 0;
+}
