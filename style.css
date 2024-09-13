@@ -7,9 +7,12 @@ font-family: gilroy;
 html,body{
 height: 100%;
 width: 100%;
+background-color: black;
+color: white;
 }
 
 
+/* 
 .main{
     height: 100%;
     width: 100%;
@@ -37,4 +40,17 @@ width: 100%;
     position: absolute;
     background-color: #FCFAF8;
     bottom: 0;
+} */
+
+h1{
+    /* overflow: hidden; */
 }
+.parent{
+    display: block;
+}
+.child{
+    display: block;
+    transform: translate(0,0%);
+}
+
+
