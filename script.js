@@ -39,14 +39,15 @@ var loadinganimation =  function(){
     })
     .to(".green",{
         height:"100%",
-        duration:2,
-        delay:-2,
+        top:0,
+        duration:1,
+        delay:-0.5,
         ease:Circ.easeInOut,
     })
-    .to(".page1",{
-        height:"100%",
-        duration:2,
-        delay:-1.7,
+    .to(".green",{
+        height:"0%",
+        duration:1,
+        delay:-0.5,
         ease:Circ.easeInOut,
     })
 
