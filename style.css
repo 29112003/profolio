@@ -26,7 +26,8 @@ color: white;
     width: 100%;
     color: #fff;
     background-color: #111;
-    display: none;
+    /* display: none; */
+    z-index: 9999;
 }
 .loader .topheading{
     position: absolute;
@@ -72,7 +73,8 @@ color: white;
     position: absolute;
     background-color: #14CF93;
     bottom: 0;
-    display: none;
+    /* display: none; */
+    z-index: 999;
 }
 
 
@@ -173,9 +175,14 @@ color: white;
     margin-top: 0;
 }
 .row svg {
-    height: 130px;
+    height: 120px;
     margin: 0 3vw;
 }
 path, polyline{
     stroke : #14CF93;
 }
+path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 1.5s ease;
+  }

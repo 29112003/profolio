@@ -14,10 +14,10 @@ function covertingInSpanChild(){
         elem.appendChild(parentSpan);
     })
 }
-covertingInSpanChild()
+
 var loadinganimation =  function(){
     var tl = gsap.timeline();
-
+    
     tl
     .from(".child span",{
         x:"100px",
@@ -41,7 +41,7 @@ var loadinganimation =  function(){
         height:"100%",
         top:0,
         duration:1,
-        delay:-0.5,
+        delay:-1,
         ease:Circ.easeInOut,
     })
     .to(".green",{
@@ -53,6 +53,55 @@ var loadinganimation =  function(){
 
 }
 
+var animateSvg = function(){
+    document.addEventListener("DOMContentLoaded", function () {
+        function animatingSvg() {
+            
+          const elements = document.querySelectorAll("#Visual path, #Visual polyline");
+      
+          console.log("Total elements to animate:", elements.length);
+      
+          elements.forEach(function (element) {
+            // Ensure the element supports getTotalLength()
+            if (typeof element.getTotalLength === "function") {
+              try {
+                const totalLength = element.getTotalLength();
+                console.log(`Processing element ID: ${element.id}, Total Length: ${totalLength}`);
+      
+                if (totalLength === 0) {
+                  console.warn(`Element ID: ${element.id} has a total length of 0. Animation may not be visible.`);
+                  return; // Skip elements with zero length
+                }
+      
+                // Set strokeDasharray and strokeDashoffset without 'px'
+                element.style.strokeDasharray = totalLength;
+                element.style.strokeDashoffset = totalLength;
+      
+                // Animate each element individually
+                gsap.to(element, {
+                  strokeDashoffset: 0,
+                  duration: 1,
+                  ease: "expo.inOut",
+                  delay: 2,
+                  onComplete: function () {
+                    console.log(`Animation complete for element ID: ${element.id}`);
+                  },
+                });
+              } catch (error) {
+                console.error("Error processing element:", element, error);
+              }
+            } else {
+              console.warn("Element does not support getTotalLength:", element);
+            }
+          });
+        }
+      
+        // Trigger the SVG animation after ensuring all elements are rendered
+        setTimeout(animatingSvg, 100); // Adjust delay if necessary
+      });
+}
+  
+covertingInSpanChild()
 loadinganimation(); 
-
+animateSvg();
 
