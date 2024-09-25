@@ -102,6 +102,6 @@ var animateSvg = function(){
 }
   
 covertingInSpanChild()
-loadinganimation(); 
+// loadinganimation();  
 animateSvg();
 
